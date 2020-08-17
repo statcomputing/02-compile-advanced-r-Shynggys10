@@ -1,0 +1,148 @@
+---
+title: "README"
+author: "Shynggys Magzanov"
+date: "09 09 2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r,eval=FALSE}
+devtools::install_github("hadley/sloop")
+devtools::install_github("hadley/emo")
+```
+The first error that occured is:
+##There is no package called ‘devtools’
+
+So it was installed.
+
+install.packages("devtools")
+
+
+install.packages("bookdown")
+
+```{r render, eval = FALSE}
+bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")
+````
+The second error that occured is:
+##Quitting from lines 123-126 (Introduction.Rmd) 
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile Introduction.Rmd
+
+Fixed by installing the package 'dplyr'
+
+install.packages("dplyr")
+
+The third error that occured is:
+##Quitting from lines 80-81 (Names-values.Rmd) 
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile Names-values.Rmd
+
+Fixed by installing the package 'lobstr'
+
+install.packages("lobstr")
+
+The fourth error that occured is:
+##Quitting from lines 432-434 (Names-values.Rmd)
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile Names-values.Rmd
+
+Fixed by installing 'ggplot2'
+
+install.packages("ggplot2")
+
+The fifth error that occured is:
+##Quitting from lines 535-550 (R6.Rmd)
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile R6.Rmd
+
+Fixed by installing 'DBI'
+
+install.packages("DBI")
+
+The sixth error that occured is:
+##Quitting from lines 535-550 (R6.Rmd)
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile R6.Rmd
+
+Fixed by installing 'RSQLite'
+
+install.packages("RSQLite")
+
+The seventh error that occured is:
+##Quitting from lines 172-176 (OO-tradeoffs.Rmd)
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile OO-tradeoffs.Rmd
+
+Fixed by installing 'zeallot'
+
+install.packages("zeallot")
+
+The 8th error that occured is:
+##Quitting from lines 209-221 (Big-picture.Rmd)
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile Big-picture.Rmd
+
+Fixed by installing the package 'dbplyr'
+
+install.packages("dbplyr")
+
+The 9th error that occured is:
+##Quitting from lines 38-40 (Perf-measure.Rmd) 
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile Perf-measure.Rmd
+
+Fixed by installing the package 'profvis'
+
+install.packages("profvis")
+
+The 10th error that occured is:
+##Quitting from lines 38-40 (Perf-measure.Rmd) 
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile Perf-measure.Rmd
+
+Fixed by installing the package 'bench'
+
+install.packages("bench")
+
+The 11th error that occured is:
+##Failed with error:  'there is no package called 'tidyr''
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile Perf-measure.Rmd
+
+Fixed by installing the package 'tidyr'
+
+install.packages("tidyr")
+
+The 12th error that occured is:
+##Quitting from lines 233-234 (Perf-measure.Rmd) 
+##Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+##Failed to compile Perf-measure.Rmd
+
+Fixed by installing the package 'ggbeeswarm'
+
+install.packages("ggbeeswarm")
+
+The 13th error that occured is:
+##Quitting from lines 77-84 (Rcpp.Rmd) 
+##Error in sourceCpp(code = code, env = env, rebuild = rebuild, cacheDir = cacheDir,  : 
+##Error 1 occurred building shared library.
+##Calls: local ... withVisible -> eval -> eval -> cppFunction -> sourceCpp
+
+Fixed by installing RTools40 and putting the location of the Rtools make utilities (bash, make, etc) on the PATH
+
+The 14th error that occured is:
+##xelatex"' not foundError: LaTeX failed to compile _main.tex. See https://yihui.org/tinytex/r/#debugging for debugging tips.
+
+Seems like my TinyTex was actually broken, and doing the following helped to fix the problem:
+
+tinytex:::install_prebuilt()
+
+The 15th error that occured is:
+##Package fontspec Error: The font "Inconsolata" cannot be found.
+
+Fixed by downloading and installing the font from the web. Also reinstalled "tinytex" package. Took 100500 tries to handle this error.
+
+Finally I was able to render the book in a pdf. 
+
+
+
